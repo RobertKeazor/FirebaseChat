@@ -9,7 +9,8 @@
     card_view:cardCornerRadius="4dp">
 
     <TextView
-        android:id="@+id/info_text"
+        android:id="@+id/frag2_chattext"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent"
+        />
 </android.support.v7.widget.CardView>
