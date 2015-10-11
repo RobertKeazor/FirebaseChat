@@ -1,4 +1,4 @@
-package HelperClasses;
+package DomainLayer;
 
 
 public class Contact {

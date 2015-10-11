@@ -1,4 +1,4 @@
-package HelperClasses;
+package DomainLayer;
 
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
@@ -8,7 +8,7 @@ import android.provider.BaseColumns;
 
 public class ContactDatabase extends SQLiteOpenHelper {
 
-
+    SQLiteDatabase db;
     public static final int DatabaseEntries = 1;
     public static final String Database_NAME = "Contacts.db";
     private static final String TEXT_TYPE = " TEXT";
@@ -27,12 +27,15 @@ public class ContactDatabase extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
+        db.execSQL(SQL_CREATE_ENTRIES);
+        this.db=db;
 
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-
+     String tableCheck ="DROP TABLE IF EXISTS";
+        db.execSQL(tableCheck);
     }
     public static abstract class FeedEntry implements BaseColumns {
         public static final String TABLE_NAME = "entry";

@@ -49,10 +49,17 @@
     <Button
         android:layout_width="match_parent"
         android:layout_height="100dp"
-        android:text="Sign In"
-
-
+        android:text="@string/activity1_signin_button"
+        android:id="@+id/activty1_loginBtn"
+        android:clickable="true"
+        android:onClick="SignIn"
 
         />
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:text="@string/activity2_signin_button"
+
+            />
     </LinearLayout>
 </LinearLayout>
