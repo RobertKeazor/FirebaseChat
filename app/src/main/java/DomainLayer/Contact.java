@@ -14,6 +14,11 @@ public class Contact {
         Email = email;
     }
 
+    public Contact(String userName, String password) {
+        UserName = userName;
+        this.password = password;
+    }
+
     public String getUserName() {
         return UserName;
     }

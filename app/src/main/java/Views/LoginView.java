@@ -8,4 +8,5 @@ public interface LoginView {
 
      void buttonSubmit(Context c, Contact contact);
 
+
 }

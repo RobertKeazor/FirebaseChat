@@ -13,7 +13,6 @@
         android:textStyle="bold"
         android:textSize="30sp"
         />
-
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -29,7 +28,8 @@
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:orientation="vertical"
-    android:paddingBottom="30dp">
+    android:paddingBottom="30dp"
+    >
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -37,9 +37,10 @@
         android:hint="PassWord"
         android:textSize="30sp"
         android:textColorHint="#520000"
-
+        android:id="@+id/activity1_password"
         />
 </LinearLayout>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -52,14 +53,13 @@
         android:text="@string/activity1_signin_button"
         android:id="@+id/activty1_loginBtn"
         android:clickable="true"
-        android:onClick="SignIn"
+
 
         />
         <Button
             android:layout_width="match_parent"
             android:layout_height="100dp"
             android:text="@string/activity2_signin_button"
-
             />
-    </LinearLayout>
-</LinearLayout>
+       </LinearLayout>
+       </LinearLayout>
