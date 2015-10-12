@@ -19,7 +19,7 @@ public class ContactDatabase extends SQLiteOpenHelper {
             "CREATE TABLE " + FeedEntry.TABLE_NAME + " (" +
                     FeedEntry._ID + " INTEGER PRIMARY KEY," +
                     FeedEntry.COLUMN_NAME_ENTRY_ID + TEXT_TYPE + COMMA_SEP +
-                    FeedEntry.COLUMN_PASSWORD + TEXT_TYPE + COMMA_SEP +" )";
+                    FeedEntry.COLUMN_PASSWORD + TEXT_TYPE+")";
 
 
     public ContactDatabase(Context context) {
@@ -44,6 +44,7 @@ public class ContactDatabase extends SQLiteOpenHelper {
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
      String tableCheck ="DROP TABLE IF EXISTS";
         db.execSQL(tableCheck);
+        this.onCreate(db);
     }
     public static abstract class FeedEntry implements BaseColumns {
         public static final String TABLE_NAME = "entry";

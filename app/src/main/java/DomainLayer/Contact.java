@@ -1,7 +1,10 @@
 package DomainLayer;
 
 
-public class Contact {
+import android.os.Parcel;
+import android.os.Parcelable;
+
+public class Contact implements Parcelable{
 
     private String UserName;
     private String password;
@@ -18,6 +21,24 @@ public class Contact {
         UserName = userName;
         this.password = password;
     }
+
+    protected Contact(Parcel in) {
+        UserName = in.readString();
+        password = in.readString();
+        Email = in.readString();
+    }
+
+    public static final Creator<Contact> CREATOR = new Creator<Contact>() {
+        @Override
+        public Contact createFromParcel(Parcel in) {
+            return new Contact(in);
+        }
+
+        @Override
+        public Contact[] newArray(int size) {
+            return new Contact[size];
+        }
+    };
 
     public String getUserName() {
         return UserName;
@@ -41,5 +62,17 @@ public class Contact {
 
     public void setEmail(String email) {
         Email = email;
+    }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeString(UserName);
+        dest.writeString(password);
+        dest.writeString(Email);
     }
 }
